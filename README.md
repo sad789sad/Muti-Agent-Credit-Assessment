@@ -79,20 +79,20 @@
 ```
 
 ## 安装与运行
-### 1. 克隆项目
+ ### 1. 克隆项目
 ```bash
 git clone https://github.com/Muti-Agent-Credit-Assessment/Muti-Agent-Credit-Assessment.git
 cd Muti-Agent-Credit-Assessment
 ```
-### 2. 安装依赖
+ ### 2. 安装依赖
 ```bash
 pip install -r requirements.txt
 ```
-### 3.配置 LLM
+ ### 3.配置 LLM
 ```bash
 cp .env.example .env
 ```
-### 4. 运行演示
+ ### 4. 运行演示
 ```bash
 python main.py
 ```
