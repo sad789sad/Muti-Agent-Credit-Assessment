@@ -113,75 +113,19 @@ python main.py
 信用评分：0.00
 决策理由：合规/反欺诈未通过: 用户自述为外卖骑手且数据显示高强度工作（日均 38 单，持续 3 个月），但系统记录显示无交通工具，存在严重的逻辑矛盾，疑似伪造就业数据或账户共用。同时，短期内申请额度远超现有授信及还款能力证明，结合薄弱的信用历史和高负债收入比，符合欺诈风险特征，建议拒绝以避免坏账及合规风险。
 
-【各智能体输出详情】
+>>> 开始处理用户：赵敏 (应届毕业生) <<<
+新授信申请处理
+正在为用户 赵敏 (应届毕业生) 处理申请...
+  申请金额：1000元
+  申请用途：日常消费
 
---- DataAggregatorAgent ---
-{
-  "demographic": {
-    "age": 24,
-    "occupation": "外卖骑手",
-    "income_bracket": "MID_LOW"
-  },
-  "credit_profile": {
-    "existing_limit": 500,
-    "has_credit_history": true,
-    "overdue_days": 0,
-    "avg_utilization": 0.45
-  },
-  "application_details": {
-    "amount": 4000,
-    "purpose": "购买工作所需电动车",
-    "amount_vs_income_ratio": 0.67
-  },
-  "alternative_data": {
-    "has_alternative_proofs": false,
-    "professional_certificates": [],
-    "special_skills_mentioned": [
-      "熟悉本地路况",
-      "多平台接单能力"
-    ],
-    "workload_intensity": "HIGH"
-  },
-  "raw_data_available": {
-    "user_extra": {
-      "avg_daily_orders": 38,
-      "work_hours_per_day": 11,
-      "on_time_rate": 0.96,
-      "customer_rating": 4.8,
-      "platform_tenure_months": 3,
-      "has_vehicle": false,
-      "vehicle_purpose": "工作需要",
-      "daily_trajectory": "覆盖5个商圈",
-      "peak_season_income_multiplier": 1.3,
-      "special_skills": [
-        "熟悉本地路况",
-        "多平台接单能力"
-      ]
-    },
-    "occupation": "外卖骑手",
-    "reason_for_credit": "购买工作所需电动车"
-  }
-}
-
---- ComplianceAgent ---
-{
-  "compliance_check_passed": false,
-  "fraud_risk_score": 88,
-  "issues_found": [
-    "职业逻辑矛盾：平台工龄 3 个月且日均单量 38 单，但系统记录无车辆，高强度配送无交通工具支撑不符合常理",
-    "授信跨度异常：现有额度 500 元，申请金额 4000 元，增幅 8 倍，且信用历史薄弱（总还款仅 1200 元）",
-    "负债收入比偏高：申请金额占月收入比例 67%，超出低风险阈值",
-    "缺乏辅助证明材料：无额外收入证明或资产证明，仅依赖平台数据"
-  ],
-  "fraud_signals_detected": [
-    " employment_data_inconsistency",
-    "aggressive_credit_limit_increase",
-    "thin_credit_file",
-    "high_debt_to_income_ratio"
-  ],
-  "recommended_action": "REJECT",
-  "compliance_reasoning": "用户自述为外卖骑手且数据显示高强度工作（日均 38 单，持续 3 个月），但系统记录显示无交通工具，存在严重的逻辑矛盾，疑似伪造就业数据或账户共用。同时，短期内申请额度远超现有授信及还款能力证明，结合薄弱的信用历史和高负债收入比，符合欺诈风险特征，建议拒绝以避免坏账及合规风险。"
-}
+----------------------------------------
+【决策结果】
+----------------------------------------
+最终决策：APPROVED
+批准金额：1000元
+信用评分：640.00
+决策理由：用户属“高潜力低现金流”客群，虽当前收入偏低且合规建议复核，但 985 计算机背景及大厂 Offer 保障未来偿债能力。1000  元小额敞口风险可控，信用记录清白。基于未来收益覆盖当前风险原则，予以批准。
 ```
 
 ## License
