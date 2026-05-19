@@ -55,14 +55,19 @@
 │ ├── credit_decider.py
 │ ├── orchestrator.py
 │ └── init.py
+
 ├── database/
 │ └── db_handler.py # SQLite 数据库操作
+
 ├── prompts/
 │ └── system_prompts.py # LLM 系统提示词
+
 ├── mock_data/
 │ └── sample_users.py # 模拟用户数据（5个非标职业）
+
 ├── utils/
 │ └── llm_client.py # 阿里百炼 API 客户端
+
 ├── schemas.py # Pydantic 数据模型
 ├── main.py # 程序入口，演示流程
 ├── .env.example # 环境变量模板
